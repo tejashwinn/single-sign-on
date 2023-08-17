@@ -37,3 +37,4 @@ mvnw
 mvnw.cmd
 /src/main/resources/*.jar
 .mvn/**
+/target
