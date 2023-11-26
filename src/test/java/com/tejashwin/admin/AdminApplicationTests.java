@@ -1,10 +1,10 @@
-package com.single.sign.on;
+package com.tejashwin.admin;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SingleSingOnApplicationTests {
+class AdminApplicationTests {
 
 	@Test
 	void contextLoads() {

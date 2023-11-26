@@ -1,13 +1,13 @@
-package com.single.sign.on;
+package com.tejashwin.admin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SingleSingOnApplication {
+public class AdminApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SingleSingOnApplication.class, args);
+		SpringApplication.run(AdminApplication.class, args);
 	}
 
 }
