@@ -30,7 +30,7 @@ public class JwtAuthConfig implements Converter<Jwt, AbstractAuthenticationToken
 
     private final String clientId;
 
-    public JwtAuthConfig(@Value("${admin.service.client-id}") String clientId) {
+    public JwtAuthConfig(@Value("${admin.service.keycloak.client-id}") String clientId) {
         this.jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
         this.clientId = clientId;
     }

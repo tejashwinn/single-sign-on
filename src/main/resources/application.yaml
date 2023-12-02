@@ -3,7 +3,13 @@ server:
   servlet:
     context-path: /admin
 
-
+admin:
+  service:
+    keycloak:
+      address: http://localhost:8080
+      client-id: tej-local-client-1
+      realm-name: tej-local-realm
+      client-secret: QtpKGsCJDIpyVmLi8QZz7kUdSim3YiSW
 
 spring:
   application:
@@ -12,7 +18,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8080/realms/tej-local-realm
+          issuer-uri: ${admin.service.keycloak.address}/realms/${admin.service.keycloak.realm-name}
           jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
 
 eureka:
@@ -29,6 +35,5 @@ logging:
   net:
     guides: DEBUG
 
-admin:
-  service:
-    client-id: tej-local-client-1
+
+

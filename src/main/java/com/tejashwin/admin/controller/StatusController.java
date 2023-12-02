@@ -11,18 +11,7 @@ public class StatusController {
 
     @GetMapping
     public String getStatus() {
-        return "Working0";
+        return "Working";
     }
 
-    @GetMapping("/1")
-    @PreAuthorize("hasAnyRole('client_user')")
-    public String getStatus1() {
-        return "Working1";
-    }
-
-    @GetMapping("/2")
-    @PreAuthorize("hasAnyRole('client_admin')")
-    public String getStatus2() {
-        return "Working2";
-    }
 }

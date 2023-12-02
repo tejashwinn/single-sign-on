@@ -25,10 +25,8 @@ public class SecurityConfig {
         httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorize -> authorize
-                                .requestMatchers("/status")
-                                .permitAll()
-                                .anyRequest()
-                                .authenticated());
+                        .requestMatchers("/status", "/token/login").permitAll()
+                        .anyRequest().authenticated());
         httpSecurity.oauth2ResourceServer(oauth2 -> oauth2.jwt(jwtConfigurer -> jwtConfigurer.jwtAuthenticationConverter(this.jwtAuthConfig)));
         httpSecurity.sessionManagement(session -> session.sessionCreationPolicy(STATELESS));
         return httpSecurity.build();
