@@ -9,15 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/status")
 public class StatusController {
 
+    @GetMapping
+    public String getStatus() {
+        return "Working0";
+    }
+
     @GetMapping("/1")
     @PreAuthorize("hasAnyRole('client_user')")
-    public String getStatus() {
-        return "Working";
+    public String getStatus1() {
+        return "Working1";
     }
 
     @GetMapping("/2")
     @PreAuthorize("hasAnyRole('client_admin')")
-    public String getStatus1() {
-        return "Working";
+    public String getStatus2() {
+        return "Working2";
     }
 }

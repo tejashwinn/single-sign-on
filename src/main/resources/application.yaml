@@ -10,26 +10,10 @@ spring:
     name: admin-service
   security:
     oauth2:
-      client:
-        registration:
-          keycloak:
-            client-id: tej-local-client-1
-            client-secret: QtpKGsCJDIpyVmLi8QZz7kUdSim3YiSW
-            authorization-grant-type: authorization_code
-            scope: openid
-        provider:
-          keycloak:
-            issuer-uri: http://localhost:8080/realms/tej-local-realm
-            user-name-attribute: preferred_username
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8080/realms/tej-local-realm
           jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
-        opaquetoken:
-          client-id: tej-local-client-1
-          client-secret: QtpKGsCJDIpyVmLi8QZz7kUdSim3YiSW
-          introspection-uri: http://localhost:8080/realms/tej-local-realm/protocol/openid-connect/token/introspect
-
 
 eureka:
   hostname: localhost
@@ -45,4 +29,6 @@ logging:
   net:
     guides: DEBUG
 
-
+admin:
+  service:
+    client-id: tej-local-client-1
